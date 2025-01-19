@@ -62,6 +62,8 @@ and search problems via biologically inspired operators such as selection, cross
 \vspace{1em} In this work a Genetic Algorithm has been implemented to find solutions to the Job-Shop Scheduling Problem (JSSP)
 \cite{WikipediaJSSP}.
 
+\vspace{1em} The related code can be found in the following GitHub repository: \url{https://github.com/novella93/NEC_A2}.
+
 \subsection{Technology used}
 
 The following technology has been used for the development:
@@ -189,6 +191,7 @@ algorithm in the future.
     \item \_crossover(self, individual\_1, individual\_2, method='one-point'): Performs crossover on two selected individuals to produce two offspring using either uniform or one-point method.
     \item \_mutate(self, individual, method, probability=0.5): Applies mutation on an individual with a specified probability, either flipping one gene or applying probabilistic mutation.
     \item \_elitism(self, popuplation\_1, population\_1\_fitness, population\_2, number=1): Ensures the best individuals from the previous generation are retained in the new population.
+    \item \_validate\_solution(self, individual): Validates a solution against the problem constraints.
     \item \_get\_best\_solution(self, population, fitness): Finds the best solution in the population by identifying the individual with the lowest makespan.
     \item run\_genetic\_algorithm(self, num\_generations, population\_size, selection\_method, crossover \_method, mutation\_method, mutation\_probability, elitism\_number): Runs the genetic algorithm for a specified number of generations, performing selection, crossover, mutation, and elitism to optimize the job-shop schedule.
 \end{itemize}
@@ -203,6 +206,7 @@ algorithm in the future.
     \item solutions\_fitness: Holds the fitness values (makespan values) for each solution in the population.
     \item best\_solution: Stores the best solution (chromosome) found during the genetic algorithm execution.
     \item best\_solution\_fitness: Holds the fitness (makespan) value of the best solution found.
+    \item minimum\_traveling\_distance: Minimum fitness across the generations.
 \end{itemize}
 
 \subsection{Loading the problem}
